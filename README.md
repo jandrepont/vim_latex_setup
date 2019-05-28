@@ -9,4 +9,5 @@ Steps for creating environment:
     * superTab
 
 ###3: Download Zathura    
+
 ###4: Configure UltiSnips using .vim/plugged/ultisnips/UltiSnips for latex
