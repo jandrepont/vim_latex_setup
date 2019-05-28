@@ -1,0 +1,263 @@
+snippet fig
+\begin{figure}[h]
+    \centering
+    \subfloat[]{{\includegraphics[width=4cm]{$1}}}
+    \qquad
+	${2:\subfloat[]{{\includegraphics[width=4cm]{}}}
+    \qquad}
+    \label{fig:$3}
+\end{figure}
+$0
+endsnippet 
+
+snippet sum 
+\sum_{$1}^{$2} $0
+endsnippet 
+
+snippet sp 
+\langle $1 , $2 \rangle $0
+endsnippet
+
+
+snippet abs 
+\left | $1 \right | $0
+endsnippet
+
+
+snippet ex 
+\exists $0
+endsnippet
+
+snippet exmp
+\begin{exmp}[$1]
+	$0
+\end{exmp}
+endsnippet 
+
+snippet lto 
+\mathscr{L}^2${1:(\Omega)} $0
+endsnippet 
+
+snippet v
+\boldsymbol{$1} $0
+endsnippet
+
+snippet phi 
+\varphi$0
+endsnippet
+
+snippet pa "parenthesis" i 
+\left( $1\right) $0
+endsnippet
+
+snippet uline "uline" i
+\underline{$1}$0
+endsnippet
+
+snippet gr "grad" i
+\nabla ${1:f(x)} $0
+endsnippet 
+
+snippet n 
+\| $1 \|^{ $2}_{ $3} $0
+endsnippet
+snippet mart
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+
+
+\title{$1}
+\author{$2}
+\date{$3}
+
+\begin{document}
+
+\maketitle
+\begin{document}
+$0
+
+
+
+\end{document}
+endsnippet
+
+snippet box "Box"
+`!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
+│ $1 │
+`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
+$0
+endsnippet
+
+snippet int
+\int\limits_{${1:-\infty}}^{${2:\infty}} $0
+endsnippet
+
+snippet im
+$ $1 $ $0
+endsnippet
+
+snippet O "O" i
+\Omega
+endsnippet
+
+snippet R
+\mathbb{R}
+endsnippet
+
+
+snippet dm
+\[
+$1
+.\]$0
+endsnippet
+
+snippet tit
+\begin{titlepage}
+\begin{center}
+ {\huge\bfseries $1 }
+ % ----------------------------------------------------------------
+ \vspace{1.5cm}
+ {\Large\bfseries Author -- ${2:Joel Andrepont}\\\ }\\\[5pt]
+ ${3:joelandrepont1@gmail.com}\\\[14pt]
+  % ----------------------------------------------------------------
+ \vspace{2cm}
+{${5:Spring Semester 2018}} \\\[5pt]
+\emph{{ ${4:ENSIMAG} }}\\\[2cm]
+\end{center}
+\end{titlepage}
+endsnippet
+
+snippet te "te" i   
+\text{$1} $0
+endsnippet
+
+
+snippet sbs   
+\subset $0
+endsnippet
+
+snippet bf "bf" 
+\textbf{$1} $0
+endsnippet
+
+snippet sec
+\section{$1}
+\label{sec:$1}
+$0
+endsnippet
+
+snippet fr 
+\frac{ $1 }{ $2 } $0
+endsnippet
+
+snippet ssec
+\subsection{$1}
+\label{subsec:$1}
+$0
+endsnippet
+
+snippet syst
+\begin{cases}
+	$1 &= $2
+	$0
+\end{cases}
+endsnippet
+
+
+snippet eq 
+\begin{equation}
+	$0
+\end{equation}
+endsnippet
+
+snippet th
+\begin{ftheo}[$1]
+	$0
+\end{ftheo}
+endsnippet
+
+snippet def "def" i
+\begin{defn}[$1]
+	$0
+	\label{def:$1}
+\end{defn}
+endsnippet
+
+
+snippet cor "cor" i
+\begin{cor}[$1]
+	$0
+\end{cor}
+endsnippet
+
+snippet l2n "l2" i
+\|$1\|_{L^2${2:_{(\Omega)}}}$0
+endsnippet
+
+snippet l2 "l2" i
+L^2${2:(\Omega)}$0
+endsnippet
+
+snippet h10 
+H^1_0(${1:\Omega}) $0
+endsnippet
+
+
+snippet dist 
+D(${1:\Omega}) $0
+endsnippet
+
+snippet mtc 
+\mathcal{ $1 } $0
+endsnippet
+
+snippet ms  
+\mathscr{ $1 } $0
+endsnippet
+
+
+snippet fa "fa" i
+\forall $0
+endsnippet
+
+snippet enum 
+\begin{enumerate}[label=(\roman*)]
+	$0
+\end{enumerate}
+endsnippet
+
+snippet mr 
+\begin{pmatrix}
+	$1 & \\\
+	$2 & 
+\end{pmatrix}
+$0
+endsnippet 
+
+snippet dma
+\begin{align*}
+	$1 ${2:&=} \\
+	$2
+\end{align*}
+$0
+endsnippet
+
+snippet p  
+\partial$0
+endsnippet
+
+snippet itm 
+\begin{itemize}
+  \item $1 \\\
+  \item $2 \\\
+\end{itemize}
+$0
+endsnippet
+
+snippet fn "fn" i
+${1:f}($2) $0
+endsnippet
+
