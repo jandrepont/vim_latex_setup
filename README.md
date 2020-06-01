@@ -1,13 +1,22 @@
 Steps for creating environment: 
 
-###1 Download vim-plug at: https://github.com/junegunn/vim-plug
-
-###2 Download the following plugs (all plus found in .vim/): 
+# Download vim-plug at: https://github.com/junegunn/vim-plug
+* Copy .bashrc into local .bashrc
+* open vim and run `:PlugInstall` this will download 
     * Ulti-Snips
     * VimTex
     * YouCompleteMe
     * superTab
 
-###3: Download Zathura    
+# Install YouCompleteMe 
+* Dependencies : 
+    * `apt install npm`
+    * `apt install golang-go`
+* `cd .vim/plugged/YouCompleteMe/ `
+* `python3 install.py --all` 
 
-###4: Configure UltiSnips using .vim/plugged/ultisnips/UltiSnips for latex
+### 3: Download Zathura, latexmk, biber
+     * sudo apt install ... 
+     
+### 4: Configure UltiSnips using .vim/plugged/ultisnips/UltiSnips for latex
+
