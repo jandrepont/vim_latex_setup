@@ -10,6 +10,21 @@ snippet fig
 $0
 endsnippet 
 
+snippet table
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+ &  &  \\\ \hline
+ &  &  \\\ \hline
+ &  &  \\\ \hline
+\end{tabular}
+\end{table}
+endsnippet 
+
+snippet ss "subscript superscript"
+_{ $1 }^{ $2 } $0
+endsnippet
+
 snippet sum 
 \sum_{$1}^{$2} $0
 endsnippet 
@@ -18,11 +33,21 @@ snippet sp
 \langle $1 , $2 \rangle $0
 endsnippet
 
+snippet eps 
+\epsilon ${1:>0}
+endsnippet 
+
+snippet nl 
+$1 &= $2 \\\ $0
+endsnippet
 
 snippet abs 
 \left | $1 \right | $0
 endsnippet
 
+snippet exp 
+e^{ $1} $0
+endsnippet
 
 snippet ex 
 \exists $0
@@ -35,11 +60,11 @@ snippet exmp
 endsnippet 
 
 snippet lto 
-\mathscr{L}^2${1:(\Omega)} $0
+\mathscr{L}^2${1:(\mathbb{R})} $0
 endsnippet 
 
-snippet v
-\boldsymbol{$1} $0
+snippet v "vector" i
+\vec{$1} $0
 endsnippet
 
 snippet phi 
@@ -48,6 +73,10 @@ endsnippet
 
 snippet pa "parenthesis" i 
 \left( $1\right) $0
+endsnippet
+
+snippet pb "parenthesis block" i 
+\left[ $1\right] $0
 endsnippet
 
 snippet uline "uline" i
@@ -95,8 +124,13 @@ snippet int
 \int\limits_{${1:-\infty}}^{${2:\infty}} $0
 endsnippet
 
+snippet intt 
+\Big|_$1^$2 
+endsnippet 
+
+
 snippet im
-$ $1 $ $0
+$ $1 $$0
 endsnippet
 
 snippet O "O" i
@@ -107,11 +141,18 @@ snippet R
 \mathbb{R}
 endsnippet
 
+snippet Ex
+\mathbb{E}\left[ $1\right]$0
+endsnippet
+
+snippet var
+\mathbb{V}\text{ar}\left[ $1\right]$0
+endsnippet
 
 snippet dm
 \[
 $1
-.\]$0
+\]$0
 endsnippet
 
 snippet tit
@@ -135,6 +176,13 @@ snippet te "te" i
 endsnippet
 
 
+snippet proof   
+\begin{proof}
+	$0
+\end{proof}
+
+endsnippet
+
 snippet sbs   
 \subset $0
 endsnippet
@@ -146,6 +194,11 @@ endsnippet
 snippet sec
 \section{$1}
 \label{sec:$1}
+$0
+endsnippet
+
+snippet sss
+\subsubsection{$1}
 $0
 endsnippet
 
@@ -170,27 +223,48 @@ endsnippet
 snippet eq 
 \begin{equation}
 	$0
+	${1:\label{eq:$2}}
 \end{equation}
 endsnippet
 
 snippet th
-\begin{ftheo}[$1]
-	$0
+\begin{ftheo}[$2]
+	$3
+	${1:\label{th:$2}}
 \end{ftheo}
+$0
+endsnippet
+
+snippet prop 
+\begin{prop}[$2]
+	$3
+	${1:\label{prop:$2}}
+\end{prop}
+$0
+endsnippet
+
+snippet lem 
+\begin{lemma}[$2]
+	$3
+	${1:\label{lemma:$2}}
+\end{lemma}
+$0
 endsnippet
 
 snippet def "def" i
-\begin{defn}[$1]
-	$0
-	\label{def:$1}
+\begin{defn}[$2]
+	$3
+	${1:\label{def:$2}}
 \end{defn}
+$0
 endsnippet
 
-
 snippet cor "cor" i
-\begin{cor}[$1]
-	$0
+\begin{cor}[$2]
+	$3
+	${1:\label{cor:$2}}
 \end{cor}
+$0
 endsnippet
 
 snippet l2n "l2" i
@@ -198,7 +272,7 @@ snippet l2n "l2" i
 endsnippet
 
 snippet l2 "l2" i
-L^2${2:(\Omega)}$0
+\mathscr{L}^2[$1,$2]$0
 endsnippet
 
 snippet h10 
@@ -223,36 +297,72 @@ snippet fa "fa" i
 \forall $0
 endsnippet
 
+snippet enuma  
+\begin{enumerate}[label={(\alph*)}]
+	\item $0
+\end{enumerate}
+endsnippet
+snippet enumi 
+\begin{enumerate}[label={(\roman*)}]
+	\item $0
+\end{enumerate}
+endsnippet
 snippet enum 
-\begin{enumerate}[label=(\roman*)]
-	$0
+\begin{enumerate}
+	\item $0
 \end{enumerate}
 endsnippet
 
+snippet mrr 
+\begin{pmatrix*}[r]
+	$1  \\\
+	$2  
+\end{pmatrix*}
+$0
+endsnippet 
 snippet mr 
-\begin{pmatrix}
-	$1 & \\\
-	$2 & 
-\end{pmatrix}
+\begin{pmatrix*}
+	$1  \\\
+	$2  
+\end{pmatrix*}
+$0
+endsnippet 
+
+snippet eye
+\begin{bmatrix*}[r]
+	1& 0& 0\\\
+	0& 1& 0\\\
+    0& 0& 1
+\end{bmatrix*}
+$0
+endsnippet 
+
+snippet set 
+\set{ $1 } $0
+endsnippet 
+
+snippet mb 
+\begin{bmatrix*}[r]
+	$1\\\
+	$2
+\end{bmatrix*}
 $0
 endsnippet 
 
 snippet dma
 \begin{align*}
-	$1 ${2:&=} \\
-	$2
+	$1
 \end{align*}
 $0
 endsnippet
 
 snippet p  
-\partial$0
+\partial $0
 endsnippet
 
 snippet itm 
 \begin{itemize}
-  \item $1 \\\
-  \item $2 \\\
+  \item $1 
 \end{itemize}
 $0
 endsnippet
@@ -261,3 +371,71 @@ snippet fn "fn" i
 ${1:f}($2) $0
 endsnippet
 
+snippet sqrt "sqrt" i
+\sqrt[$1]{$2} $0
+endsnippet
+snippet mathbook 
+
+\documentclass{book}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage{framed,enumitem} 
+\usepackage{pdfpages} 
+\usepackage[english]{babel}
+\newenvironment{proof}{\paragraph{Proof:}}{\hfill$\square$}
+\usepackage{mathrsfs}
+\usepackage{commath}
+\usepackage{empheq,mathtools}
+%\usepackage[backend=biber, style=authortitle]{biblatex}
+%\addbibresource{References/references.bib}
+\usepackage{mdframed}
+\usepackage{multicol}
+\usepackage{enumitem}
+%\usepackage{unicode-math}
+\usepackage[makeroom]{cancel}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{transparent}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage[bookmarks]{hyperref}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+\pdfsuppresswarningpagegroup=1
+
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+
+\begin{document}
+
+\newtheorem{theo}{Theorem}[section] % reset theorem numbering for each chapter
+\newtheorem{defn}[theo]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[theo]{Example} % same for example numbers
+\newtheorem{cor}[theo]{Corollary} % same for corollary numbers
+\newtheorem{prop}[theo]{Proposition} % same 
+
+%make ftheo be framed theorems
+\newtheorem{theo}{Theorem}
+\newenvironment{ftheo}
+  {\begin{mdframed}\begin{theo}}
+  {\end{theo}\end{mdframed}}
+\newcommand{\qed}{\rule{2mm}{2mm}}
+
+\title{$1}
+\author{$2}
+\date{$3}
+\begin{document}
+
+\maketitle
+\begin{document}
+\tableofcontents
+$0
+\end{document}
+endsnippet
